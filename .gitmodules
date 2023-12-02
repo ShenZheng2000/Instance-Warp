@@ -1,0 +1,9 @@
+[submodule "DAFormer"]
+	path = DAFormer
+	url = https://github.com/ShenZheng2000/DAFormer
+[submodule "Night-Object-Detection"]
+	path = Night-Object-Detection
+	url = https://github.com/ShenZheng2000/Night-Object-Detection
+[submodule "MIC"]
+	path = MIC
+	url = https://github.com/ShenZheng2000/MIC
