@@ -19,6 +19,18 @@ See [DAFormer/README.md](https://github.com/ShenZheng2000/DAFormer/blob/master/R
 See [MIC/seg/README.md](https://github.com/ShenZheng2000/MIC/blob/master/seg/README.md)
 
 
+# Image Warping Code Setuup 
+
+NOTE: Prior to advancing with semantic segmentation, ensure that the detection code is functioning properly.
+
+Assuming your current folder's path is `XXX`, proceed with the following steps to create a symbolic link for the code related to warping, 
+which is necessary for semantic segmentation models, including DAFormer and MIC.
+
+```
+ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/MIC/seg/mmseg/transforms
+ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/DAFormer/mmseg/transforms
+```
+
 # Environment Setup for DAFormer and MIC
 
 For this project, we used python 3.7. We recommend setting up a new virtual
@@ -154,6 +166,5 @@ respective dataset to obtain the test score.
 
 # TODO_List
 
-1. Show how we use ln -s to link `/transforms` folder for multiple repos. 
-2. Add ID or config for warping-related experiments.
-3. Upload checkpoints for major experiments
+* Add ID or config for warping-related experiments.
+* Upload checkpoints for major experiments
