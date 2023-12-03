@@ -12,11 +12,11 @@ See [Night-Object-Detection/README.md](https://github.com/ShenZheng2000/Instance
 
 # DAFormer for Semantic Segmentation
 
-See [DAFormer/README.md](https://github.com/ShenZheng2000/Instance-Warp/blob/master/DAFormer/README.md)
+See [DAFormer/README.md](https://github.com/ShenZheng2000/DAFormer/blob/master/README.md)
 
 # MIC for Semantic Segmentation
 
-See [MIC/seg/README.md](https://github.com/ShenZheng2000/Instance-Warp/blob/master/MIC/seg/README.md)
+See [MIC/seg/README.md](https://github.com/ShenZheng2000/MIC/blob/master/seg/README.md)
 
 
 # Environment Setup for DAFormer and MIC
