@@ -8,7 +8,7 @@ Shen Zheng, Anurag Ghosh, Srinivasa Narasimhan
 
 # 2PCNet for Object Detection
 
-See [Night-Object-Detection/README.md](https://github.com/ShenZheng2000/Instance-Warp/blob/master/Night-Object-Detection/README.md)
+See [Night-Object-Detection/README.md](https://github.com/ShenZheng2000/Night-Object-Detection/blob/master/README.md)
 
 # DAFormer for Semantic Segmentation
 
