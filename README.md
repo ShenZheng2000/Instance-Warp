@@ -1,6 +1,6 @@
 # Instance-Warp
 
-Addressing Source Scale Bias via Instance-Level Image Warping for Domain Adaptation
+
 
 Shen Zheng, Anurag Ghosh, Srinivasa Narasimhan
 
@@ -49,13 +49,13 @@ pip install -U openmim
 mim install mmcv-full==1.3.7
 ```
 
-Further, please download the MiT weights and a pretrained DAFormer using the
-following script. If problems occur with the automatic download, please follow
-the instructions for a manual download within the script.
+Further, please download the MiT weights from [here](https://drive.google.com/file/d/1KuyZzBr2_HRG5L78Ki9YOe2pkd8wcETE/view?usp=drive_link)
 
-```shell
+<!-- ```shell
 sh tools/download_checkpoints.sh
-```
+``` -->
+
+
 
 All experiments were executed on a NVIDIA RTX 4090 Ti.
 
