@@ -18,6 +18,13 @@ See [DAFormer/README.md](https://github.com/ShenZheng2000/DAFormer/blob/master/R
 
 See [MIC/seg/README.md](https://github.com/ShenZheng2000/MIC/blob/master/seg/README.md)
 
+# Get Started
+
+Clone this repo recursively
+
+```
+git clone --recurse-submodules https://github.com/ShenZheng2000/Instance-Warp
+```
 
 # Image Warping Code Setuup 
 
@@ -30,13 +37,6 @@ ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/MIC/seg/mmseg/tran
 ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/DAFormer/mmseg/transforms
 ```
 
-# Get Started
-
-Clone this repo recursively
-
-```
-git clone --recurse-submodules https://github.com/ShenZheng2000/Instance-Warp
-```
 
 # Environment Setup for DAFormer and MIC
 
