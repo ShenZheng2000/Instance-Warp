@@ -23,12 +23,19 @@ See [MIC/seg/README.md](https://github.com/ShenZheng2000/MIC/blob/master/seg/REA
 
 NOTE: Prior to advancing with semantic segmentation, ensure that the detection code is functioning properly.
 
-Assuming your current folder's path is `XXX`, proceed with the following steps to create a symbolic link for the code related to warping, 
-which is necessary for semantic segmentation models, including DAFormer and MIC.
+Assuming your current folder's absolute path is `XXX`, proceed with the following steps to create a symbolic link for the code related to warping, which is necessary for semantic segmentation models, including DAFormer and MIC.
 
 ```
 ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/MIC/seg/mmseg/transforms
 ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/DAFormer/mmseg/transforms
+```
+
+# Get Started
+
+Clone this repo recursively
+
+```
+git clone --recurse-submodules https://github.com/ShenZheng2000/Instance-Warp
 ```
 
 # Environment Setup for DAFormer and MIC
@@ -45,6 +52,7 @@ In that environment, the requirements can be installed with:
 
 ```shell
 pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
+pip install kornia==0.5.8
 pip install -U openmim
 mim install mmcv-full==1.3.7
 ```
@@ -64,38 +72,39 @@ All experiments were executed on a NVIDIA RTX 4090 Ti.
 
 **Cityscapes:** Please, download leftImg8bit_trainvaltest.zip and
 gt_trainvaltest.zip from [here](https://www.cityscapes-dataset.com/downloads/)
-and extract them to `data/cityscapes`.
+and extract them to `$data_path/cityscapes`.
 
 **GTA:** Please, download all image and label packages from
 [here](https://download.visinf.tu-darmstadt.de/data/from_games/) and extract
-them to `data/gta`.
+them to `$data_path/gta`.
 
 **Synthia (Optional):** Please, download SYNTHIA-RAND-CITYSCAPES from
-[here](http://synthia-dataset.net/downloads/) and extract it to `data/synthia`.
+[here](http://synthia-dataset.net/downloads/) and extract it to `$data_path/synthia`.
 
 **ACDC (Optional):** Please, download rgb_anon_trainvaltest.zip and
 gt_trainval.zip from [here](https://acdc.vision.ee.ethz.ch/download) and
-extract them to `data/acdc`. Further, please restructure the folders from
+extract them to `$data_path/acdc`. Further, please restructure the folders from
 `condition/split/sequence/` to `split/` using the following commands:
 
 ```shell
-rsync -a data/acdc/rgb_anon/*/train/*/* data/acdc/rgb_anon/train/
-rsync -a data/acdc/rgb_anon/*/val/*/* data/acdc/rgb_anon/val/
-rsync -a data/acdc/gt/*/train/*/*_labelTrainIds.png data/acdc/gt/train/
-rsync -a data/acdc/gt/*/val/*/*_labelTrainIds.png data/acdc/gt/val/
+cd $data_path
+rsync -a acdc/rgb_anon/*/train/*/* acdc/rgb_anon/train/
+rsync -a acdc/rgb_anon/*/val/*/* acdc/rgb_anon/val/
+rsync -a acdc/gt/*/train/*/*_labelTrainIds.png acdc/gt/train/
+rsync -a acdc/gt/*/val/*/*_labelTrainIds.png acdc/gt/val/
 ```
 
 **Dark Zurich (Optional):** Please, download the Dark_Zurich_train_anon.zip
 and Dark_Zurich_val_anon.zip from
 [here](https://www.trace.ethz.ch/publications/2019/GCMA_UIoU/) and extract it
-to `data/dark_zurich`.
+to `$data_path/dark_zurich`.
 
 The final folder structure should look like this:
 
 ```none
 DAFormer
 ├── ...
-├── data
+├── $data_path
 │   ├── acdc (optional)
 │   │   ├── gt
 │   │   │   ├── train
@@ -130,9 +139,9 @@ DAFormer
 train IDs and to generate the class index for RCS:
 
 ```shell
-python tools/convert_datasets/gta.py data/gta --nproc 8
-python tools/convert_datasets/cityscapes.py data/cityscapes --nproc 8
-python tools/convert_datasets/synthia.py data/synthia/ --nproc 8
+python tools/convert_datasets/gta.py $data_path/gta --nproc 8
+python tools/convert_datasets/cityscapes.py $data_path/cityscapes --nproc 8
+python tools/convert_datasets/synthia.py $data_path/synthia/ --nproc 8
 ```
 
 
