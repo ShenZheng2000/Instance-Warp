@@ -30,7 +30,7 @@ git clone --recurse-submodules https://github.com/ShenZheng2000/Instance-Warp
 
 NOTE: Prior to advancing with semantic segmentation, ensure that the detection code is functioning properly.
 
-Assuming your current folder's absolute path is `XXX`, proceed with the following steps to create a symbolic link for the code related to warping, which is necessary for semantic segmentation models, including DAFormer and MIC.
+Assuming your current folder's ABSOLUTE path is `XXX`, proceed with the following steps to create a symbolic link for the code related to warping, which is necessary for semantic segmentation models, including DAFormer and MIC.
 
 ```
 ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/MIC/seg/mmseg/transforms
