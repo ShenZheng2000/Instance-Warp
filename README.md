@@ -132,7 +132,13 @@ DAFormer
 │   │   ├── RGB
 │   │   ├── GT
 │   │   │   ├── LABELS
-├── ...
+│   ├── foggy_cityscapes
+│   │   ├── leftImg8bit_foggy
+│   │   │   ├── train
+│   │   │   ├── val
+│   │   ├── gtFine
+│   │   │   ├── train
+│   │   │   ├── val
 ```
 
 **Data Preprocessing:** Finally, please run the following scripts to convert the label IDs to the
@@ -170,10 +176,3 @@ python -m tools.test path/to/config_file path/to/checkpoint_file --test-set --fo
 
 The predictions can be submitted to the [ACDC](https://acdc.vision.ee.ethz.ch/submit) or [DarkZurich](https://codalab.lisn.upsaclay.fr/competitions/3783#participate-submit_results) public evaluation server of the
 respective dataset to obtain the test score.
-
-
-
-# TODO_List
-
-* Add ID or config for warping-related experiments.
-* Upload checkpoints for major experiments
