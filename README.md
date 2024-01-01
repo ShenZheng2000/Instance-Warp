@@ -70,19 +70,23 @@ All experiments were executed on a NVIDIA RTX 4090 Ti.
 
 # Dataset Setup for DAFormer and MIC
 
-**Cityscapes:** Please, download leftImg8bit_trainvaltest.zip and
-gt_trainvaltest.zip from [here](https://www.cityscapes-dataset.com/downloads/)
+**Cityscapes:** Please, download `leftImg8bit_trainvaltest.zip` and
+`gt_trainvaltest.zip` from [here](https://www.cityscapes-dataset.com/downloads/)
 and extract them to `$data_path/cityscapes`.
+
+**Foggy Cityscapes:** Please, download `leftImg8bit_trainvaltest_foggy.zip` and
+`gt_trainvaltest.zip` from [here](https://www.cityscapes-dataset.com/downloads/)
+and extract them to `$data_path/foggy_cityscapes`.
 
 **GTA:** Please, download all image and label packages from
 [here](https://download.visinf.tu-darmstadt.de/data/from_games/) and extract
 them to `$data_path/gta`.
 
-**Synthia (Optional):** Please, download SYNTHIA-RAND-CITYSCAPES from
+**Synthia:** Please, download `SYNTHIA-RAND-CITYSCAPES` from
 [here](http://synthia-dataset.net/downloads/) and extract it to `$data_path/synthia`.
 
-**ACDC (Optional):** Please, download rgb_anon_trainvaltest.zip and
-gt_trainval.zip from [here](https://acdc.vision.ee.ethz.ch/download) and
+**ACDC:** Please, download `rgb_anon_trainvaltest.zip` and
+`gt_trainval.zip` from [here](https://acdc.vision.ee.ethz.ch/download) and
 extract them to `$data_path/acdc`. Further, please restructure the folders from
 `condition/split/sequence/` to `split/` using the following commands:
 
@@ -94,8 +98,8 @@ rsync -a acdc/gt/*/train/*/*_labelTrainIds.png acdc/gt/train/
 rsync -a acdc/gt/*/val/*/*_labelTrainIds.png acdc/gt/val/
 ```
 
-**Dark Zurich (Optional):** Please, download the Dark_Zurich_train_anon.zip
-and Dark_Zurich_val_anon.zip from
+**Dark Zurich:** Please, download the `Dark_Zurich_train_anon.zip`
+and `Dark_Zurich_val_anon.zip` from
 [here](https://www.trace.ethz.ch/publications/2019/GCMA_UIoU/) and extract it
 to `$data_path/dark_zurich`.
 
@@ -105,7 +109,7 @@ The final folder structure should look like this:
 DAFormer
 ├── ...
 ├── $data_path
-│   ├── acdc (optional)
+│   ├── acdc
 │   │   ├── gt
 │   │   │   ├── train
 │   │   │   ├── val
@@ -119,7 +123,7 @@ DAFormer
 │   │   ├── gtFine
 │   │   │   ├── train
 │   │   │   ├── val
-│   ├── dark_zurich (optional)
+│   ├── dark_zurich
 │   │   ├── gt
 │   │   │   ├── val
 │   │   ├── rgb_anon
@@ -128,7 +132,7 @@ DAFormer
 │   ├── gta
 │   │   ├── images
 │   │   ├── labels
-│   ├── synthia (optional)
+│   ├── synthia
 │   │   ├── RGB
 │   │   ├── GT
 │   │   │   ├── LABELS
