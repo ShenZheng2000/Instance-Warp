@@ -37,6 +37,11 @@ ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/MIC/seg/mmseg/tran
 ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/DAFormer/mmseg/transforms
 ```
 
+# Jsons for Instance-Level Warping
+
+To train semantic segmentation models using our instance-level warping techinique,
+you need to download the JSON file that contains the bounding boxes. Download link is [[here](https://drive.google.com/drive/folders/1kb1KwJLFhV0GpFtMhC_GedEnUxh_jy79?usp=sharing)]
+
 
 # Environment Setup for DAFormer and MIC
 
