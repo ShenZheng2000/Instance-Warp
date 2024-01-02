@@ -26,7 +26,7 @@ Clone this repo recursively
 git clone --recurse-submodules https://github.com/ShenZheng2000/Instance-Warp
 ```
 
-# Image Warping Code Setuup 
+# Image Warping Code Setup 
 
 NOTE: Prior to advancing with semantic segmentation, ensure that the detection code is functioning properly.
 
@@ -37,7 +37,7 @@ ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/MIC/seg/mmseg/tran
 ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/DAFormer/mmseg/transforms
 ```
 
-# Jsons for Instance-Level Warping
+# Image Warping Json Files
 
 To train semantic segmentation models using our instance-level warping techinique,
 you need to download the JSON file that contains the bounding boxes. Download link is [[here](https://drive.google.com/drive/folders/1kb1KwJLFhV0GpFtMhC_GedEnUxh_jy79?usp=sharing)]
