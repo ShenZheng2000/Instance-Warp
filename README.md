@@ -160,7 +160,7 @@ python tools/convert_datasets/synthia.py $data_path/synthia/ --nproc 8
 ```
 
 
-# Evaluation for DAFormer and MIC
+# Evaluation for DAFormer and MIC (Val Set)
 
 Models can be tested after the training has finished:
 
@@ -175,16 +175,19 @@ practice in UDA to report the mIoU for Synthia→Cityscapes only on these 16
 classes. As the Iou for the 3 missing classes is 0, you can do the conversion
 mIoU16 = mIoU19 * 19 / 16.
 
+# Evaluatin for DAFormer and MIC (Test Set)
+
 The results for Cityscapes→ACDC and Cityscapes→DarkZurich are reported on
 the test split of the target dataset. To generate the predictions for the test
-set, please run:
+set, please:
+
+1. Generate test set predictions using:
 
 ```shell
-python -m tools.test path/to/config_file path/to/checkpoint_file --test-set --format-only --eval-option imgfile_prefix=labelTrainIds to_label_id=False
+bash test_test.sh path/to/checkpoint_directory
 ```
 
-The predictions can be submitted to the [ACDC](https://acdc.vision.ee.ethz.ch/submit) or [DarkZurich](https://codalab.lisn.upsaclay.fr/competitions/3783#participate-submit_results) public evaluation server of the
-respective dataset to obtain the test score.
+2. Submit to [ACDC](https://acdc.vision.ee.ethz.ch/submit) or [DarkZurich](https://codalab.lisn.upsaclay.fr/competitions/3783#participate-submit_results) public evaluation server to obtain the scores. 
 
 
 # Utility Scripts
