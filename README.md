@@ -1,8 +1,7 @@
-# Instance-Warp
+# Instance Warping for Domain Adaptation
 
-
-
-Shen Zheng, Anurag Ghosh, Srinivasa Narasimhan
+<br>_[Shen Zheng](https://shenzheng2000.github.io/), [Anurag Ghosh](https://anuragxel.github.io/), [Srinivasa Narasimhan](https://www.cs.cmu.edu/~srinivas/)_<br>
+In Submission
 
 # Overview
 
@@ -43,7 +42,7 @@ To train semantic segmentation models using our instance-level warping techiniqu
 you need to download the JSON file that contains the bounding boxes. Download link is [[here](https://drive.google.com/drive/folders/1kb1KwJLFhV0GpFtMhC_GedEnUxh_jy79?usp=sharing)]
 
 
-# Environment Setup for DAFormer and MIC
+# DAFormer and MIC: Environment Setup
 
 For this project, we used python 3.7. We recommend setting up a new virtual
 environment:
@@ -64,16 +63,11 @@ mim install mmcv-full==1.3.7
 
 Further, please download the MiT weights from [here](https://drive.google.com/file/d/1KuyZzBr2_HRG5L78Ki9YOe2pkd8wcETE/view?usp=drive_link)
 
-<!-- ```shell
-sh tools/download_checkpoints.sh
-``` -->
-
-
 
 All experiments were executed on a NVIDIA RTX 4090 Ti.
 
 
-# Dataset Setup for DAFormer and MIC
+# DAFormer and MIC: Dataset Setup
 
 **Cityscapes:** Please, download `leftImg8bit_trainvaltest.zip` and
 `gt_trainvaltest.zip` from [here](https://www.cityscapes-dataset.com/downloads/)
@@ -160,7 +154,7 @@ python tools/convert_datasets/synthia.py $data_path/synthia/ --nproc 8
 ```
 
 
-# Evaluation for DAFormer and MIC (Val Set)
+# DAFormer and MIC: Val Set Evaluation
 
 Models can be tested after the training has finished:
 
@@ -175,7 +169,7 @@ practice in UDA to report the mIoU for Synthia→Cityscapes only on these 16
 classes. As the Iou for the 3 missing classes is 0, you can do the conversion
 mIoU16 = mIoU19 * 19 / 16.
 
-# Evaluatin for DAFormer and MIC (Test Set)
+# DAFormer and MIC: Test Set Evaluation
 
 The results for Cityscapes→ACDC and Cityscapes→DarkZurich are reported on
 the test split of the target dataset. To generate the predictions for the test
