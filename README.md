@@ -25,17 +25,6 @@ Clone this repo recursively
 git clone --recurse-submodules https://github.com/ShenZheng2000/Instance-Warp
 ```
 
-# Image Warping Code Setup 
-
-NOTE: Prior to advancing with semantic segmentation, ensure that the detection code is functioning properly.
-
-Assuming your current folder's ABSOLUTE path is `XXX`, proceed with the following steps to create a symbolic link for the code related to warping, which is necessary for semantic segmentation models, including DAFormer and MIC.
-
-```
-ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/MIC/seg/mmseg/transforms
-ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/DAFormer/mmseg/transforms
-```
-
 # Image Warping Json Files
 
 To train semantic segmentation models using our instance-level warping techinique,
@@ -44,6 +33,25 @@ you need to download the JSON file that contains the bounding boxes. Download li
 
 # DAFormer and MIC: Environment Setup
 
+
+<details>
+  <summary><strong>Symbolic Link</strong></summary>
+
+Assuming your current folder's ABSOLUTE path is `XXX`, proceed with the following steps to create a symbolic link for the code related to warping, which is necessary for semantic segmentation models, including DAFormer and MIC.
+
+NOTE: Prior to advancing with semantic segmentation, ensure that the detection code is functioning properly.
+
+```
+ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/MIC/seg/mmseg/transforms
+ln -s XXX/Night-Object-Detection/twophase/data/transforms XXX/DAFormer/mmseg/transforms
+```
+
+</details>
+
+
+<details>
+  <summary><strong>Build Environment</strong></summary>
+
 For this project, we used python 3.7. We recommend setting up a new virtual
 environment:
 
@@ -51,6 +59,12 @@ environment:
 conda create -n CMDA python=3.7
 conda activate CMDA
 ```
+
+</details>
+
+
+<details>
+  <summary><strong>Install Packages</strong></summary>
 
 In that environment, the requirements can be installed with:
 
@@ -61,13 +75,24 @@ pip install -U openmim
 mim install mmcv-full==1.3.7
 ```
 
+</details>
+
+
+<details>
+  <summary><strong>Download Weights</strong></summary>
+
 Further, please download the MiT weights from [here](https://drive.google.com/file/d/1KuyZzBr2_HRG5L78Ki9YOe2pkd8wcETE/view?usp=drive_link)
 
 
 All experiments were executed on a NVIDIA RTX 4090 Ti.
 
+</details>
+
 
 # DAFormer and MIC: Dataset Setup
+
+<details>
+  <summary><strong>Dataset Preparations</strong></summary>
 
 **Cityscapes:** Please, download `leftImg8bit_trainvaltest.zip` and
 `gt_trainvaltest.zip` from [here](https://www.cityscapes-dataset.com/downloads/)
@@ -102,9 +127,11 @@ and `Dark_Zurich_val_anon.zip` from
 [here](https://www.trace.ethz.ch/publications/2019/GCMA_UIoU/) and extract it
 to `$data_path/dark_zurich`.
 
-The final folder structure should look like this:
+</details>
 
-```none
+<details>
+  <summary><strong>Dataset Folder Structures</strong></summary>
+  <pre>
 DAFormer
 ├── ...
 ├── $data_path
@@ -142,9 +169,14 @@ DAFormer
 │   │   ├── gtFine
 │   │   │   ├── train
 │   │   │   ├── val
-```
+  </pre>
+</details>
 
-**Data Preprocessing:** Finally, please run the following scripts to convert the label IDs to the
+
+<details>
+  <summary><strong>Data Preprocessing</strong></summary>
+
+Finally, please run the following scripts to convert the label IDs to the
 train IDs and to generate the class index for RCS:
 
 ```shell
@@ -152,6 +184,8 @@ python tools/convert_datasets/gta.py $data_path/gta --nproc 8
 python tools/convert_datasets/cityscapes.py $data_path/cityscapes --nproc 8
 python tools/convert_datasets/synthia.py $data_path/synthia/ --nproc 8
 ```
+
+</details>
 
 
 # DAFormer and MIC: Val Set Evaluation
