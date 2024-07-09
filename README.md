@@ -203,6 +203,11 @@ practice in UDA to report the mIoU for Synthia→Cityscapes only on these 16
 classes. As the Iou for the 3 missing classes is 0, you can do the conversion
 mIoU16 = mIoU19 * 19 / 16.
 
+TODO: Instruction on test on custom images
+
+(1) Change path in json file
+(2) Run testing
+
 # DAFormer and MIC: Test Set Evaluation
 
 The results for Cityscapes→ACDC and Cityscapes→DarkZurich are reported on
