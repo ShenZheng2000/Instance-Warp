@@ -196,17 +196,6 @@ Models can be tested after the training has finished:
 sh test.sh path/to/checkpoint_directory
 ```
 
-When evaluating a model trained on Synthia→Cityscapes, please note that the
-evaluation script calculates the mIoU for all 19 Cityscapes classes. However,
-Synthia contains only labels for 16 of these classes. Therefore, it is a common
-practice in UDA to report the mIoU for Synthia→Cityscapes only on these 16
-classes. As the Iou for the 3 missing classes is 0, you can do the conversion
-mIoU16 = mIoU19 * 19 / 16.
-
-TODO: Instruction on test on custom images
-
-(1) Change path in json file
-(2) Run testing
 
 # DAFormer and MIC: Test Set Evaluation
 
