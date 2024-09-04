@@ -33,6 +33,13 @@ you need to download the JSON file that contains the bounding boxes. Download li
 
 # DAFormer and MIC: Environment Setup
 
+<details>
+  <summary><strong>Folder Preparation</strong></summary>
+
+Run `mkdir outs` in the terminal to create a directory where logs from `nohup` can be saved.
+
+</details>
+
 
 <details>
   <summary><strong>Symbolic Link</strong></summary>
