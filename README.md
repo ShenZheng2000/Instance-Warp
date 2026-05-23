@@ -33,6 +33,7 @@ We warp the image at **instance-level** to oversample **easier-to-adapt foregrou
 - [Utility Scripts](#utility-scripts)
 
 
+<a id="get-started"></a>
 # 🚀 Get Started
 
 Clone this repo recursively
@@ -45,12 +46,13 @@ To train semantic segmentation models using our instance-level warping techiniqu
 you need to download the JSON file that contains the bounding boxes. Download link is [[here](https://drive.google.com/drive/folders/1kb1KwJLFhV0GpFtMhC_GedEnUxh_jy79?usp=sharing)]
 
 
+<a id="2pcnet-for-object-detection"></a>
 # 🎯 2PCNet for Object Detection
 
 See [Night-Object-Detection/README.md](https://github.com/ShenZheng2000/Night-Object-Detection/blob/master/README.md)
 
 
-
+<a id="daformer-and-mic-environment-setup"></a>
 # ⚙️ DAFormer and MIC: Environment Setup
 
 <details>
@@ -116,6 +118,7 @@ All experiments were executed on a NVIDIA RTX 4090 Ti.
 </details>
 
 
+<a id="daformer-and-mic-dataset-setup"></a>
 # 📂 DAFormer and MIC: Dataset Setup
 
 <details>
@@ -215,17 +218,19 @@ python tools/convert_datasets/synthia.py $data_path/synthia/ --nproc 8
 </details>
 
 
-
+<a id="daformer-for-semantic-segmentation"></a>
 # 🎯 DAFormer for Semantic Segmentation
 
 See [DAFormer/README.md](https://github.com/ShenZheng2000/DAFormer/blob/master/README.md)
 
+
+<a id="mic-for-semantic-segmentation"></a>
 # 🎯 MIC for Semantic Segmentation
 
 See [MIC/seg/README.md](https://github.com/ShenZheng2000/MIC/blob/master/seg/README.md)
 
 
-
+<a id="daformer-and-mic-val-set-evaluation"></a>
 # 🏆 DAFormer and MIC: Val Set Evaluation
 
 Models can be tested after the training has finished:
@@ -235,6 +240,7 @@ sh test.sh path/to/checkpoint_directory
 ```
 
 
+<a id="daformer-and-mic-test-set-evaluation"></a>
 # 🏆 DAFormer and MIC: Test Set Evaluation
 
 The results for Cityscapes→ACDC and Cityscapes→DarkZurich are reported on
@@ -250,11 +256,13 @@ bash test_test.sh path/to/checkpoint_directory
 2. Submit to [ACDC](https://acdc.vision.ee.ethz.ch/submit) or [DarkZurich](https://codalab.lisn.upsaclay.fr/competitions/3783#participate-submit_results) public evaluation server to obtain the scores. 
 
 
+<a id="faq"></a>
 # ❓ FAQ
 
 Please see [FAQ.md](FAQ.md) for common questions and answers about model design.
 
 
+<a id="utility-scripts"></a>
 # 🛠️ Utility Scripts
 
 See utility scripts in [here](https://github.com/ShenZheng2000/Instance-Warp-Scripts)
