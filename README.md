@@ -15,7 +15,9 @@
 
 # 🤗 Overview
 
-We warp the image at instance-level to oversample easier-to-adapt foreground objects and undersample harder-to-adapt background regions to improve feature representation in domain adaptation.
+We warp the image at **instance-level** to oversample **easier-to-adapt foreground objects** and undersample **harder-to-adapt background regions** to improve feature representation in **domain adaptation**.
+
+![Instance-Warp Overview](./images/new-explanation.jpg)
 
 
 # 📋 Table of Contents
