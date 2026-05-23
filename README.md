@@ -1,31 +1,37 @@
-<h1 align="center">[WACV 2025] Instance-Warp: Saliency Guided Image Warping for Unsupervised Domain Adaptation</h1>
+<div align="center">
+
+# [WACV 2025] Instance-Warp: Saliency Guided Image Warping for Unsupervised Domain Adaptation
+
+[Shen Zheng](https://shenzheng2000.github.io/), [Anurag Ghosh](https://anuragxel.github.io/), [Srinivasa Narasimhan](https://www.cs.cmu.edu/~srinivas/)
 
 <p align="center">
-   <a href="https://arxiv.org/abs/2403.12712">Arxiv</a> |
-    <a href="https://instancewarp.github.io/">Webpage</a>
+  <a href='https://openaccess.thecvf.com/content/WACV2025/papers/Zheng_Instance-Warp_Saliency_Guided_Image_Warping_for_Unsupervised_Domain_Adaptation_WACV_2025_paper.pdf'><img src='https://img.shields.io/badge/Paper-WACV_2025-blue'></a>&nbsp;
+  <a href='https://arxiv.org/abs/2403.12712'><img src='https://img.shields.io/badge/ArXiv-2403.12712-red'></a>&nbsp;
+  <a href='https://instancewarp.github.io/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>&nbsp;
 </p>
 
-# Title
+</div>
 
-<b>Instance-Warp: Saliency Guided Image Warping for Unsupervised Domain Adaptation</b>
-<br>_[Shen Zheng](https://shenzheng2000.github.io/), [Anurag Ghosh](https://anuragxel.github.io/), [Srinivasa Narasimhan](https://www.cs.cmu.edu/~srinivas/)_<br>
-In WACV 2025
 
-# Overview
+# 🤗 Overview
 
-# 2PCNet for Object Detection
+We warp the image at instance-level to oversample easier-to-adapt foreground objects and undersample harder-to-adapt background regions to improve feature representation in domain adaptation.
 
-See [Night-Object-Detection/README.md](https://github.com/ShenZheng2000/Night-Object-Detection/blob/master/README.md)
 
-# DAFormer for Semantic Segmentation
+# 📋 Table of Contents
+- [Get Started](#get-started)
+- [2PCNet for Object Detection](#2pcnet-for-object-detection)
+- [DAFormer and MIC: Environment Setup](#daformer-and-mic-environment-setup)
+- [DAFormer and MIC: Dataset Setup](#daformer-and-mic-dataset-setup)
+- [DAFormer for Semantic Segmentation](#daformer-for-semantic-segmentation)
+- [MIC for Semantic Segmentation](#mic-for-semantic-segmentation)
+- [DAFormer and MIC: Val Set Evaluation](#daformer-and-mic-val-set-evaluation)
+- [DAFormer and MIC: Test Set Evaluation](#daformer-and-mic-test-set-evaluation)
+- [FAQ](#faq)
+- [Utility Scripts](#utility-scripts)
 
-See [DAFormer/README.md](https://github.com/ShenZheng2000/DAFormer/blob/master/README.md)
 
-# MIC for Semantic Segmentation
-
-See [MIC/seg/README.md](https://github.com/ShenZheng2000/MIC/blob/master/seg/README.md)
-
-# Get Started
+# 🚀 Get Started
 
 Clone this repo recursively
 
@@ -33,13 +39,17 @@ Clone this repo recursively
 git clone --recurse-submodules https://github.com/ShenZheng2000/Instance-Warp
 ```
 
-# Image Warping Json Files
-
 To train semantic segmentation models using our instance-level warping techinique,
 you need to download the JSON file that contains the bounding boxes. Download link is [[here](https://drive.google.com/drive/folders/1kb1KwJLFhV0GpFtMhC_GedEnUxh_jy79?usp=sharing)]
 
 
-# DAFormer and MIC: Environment Setup
+# 🎯 2PCNet for Object Detection
+
+See [Night-Object-Detection/README.md](https://github.com/ShenZheng2000/Night-Object-Detection/blob/master/README.md)
+
+
+
+# ⚙️ DAFormer and MIC: Environment Setup
 
 <details>
   <summary><strong>Folder Preparation</strong></summary>
@@ -104,7 +114,7 @@ All experiments were executed on a NVIDIA RTX 4090 Ti.
 </details>
 
 
-# DAFormer and MIC: Dataset Setup
+# 📂 DAFormer and MIC: Dataset Setup
 
 <details>
   <summary><strong>Dataset Preparations</strong></summary>
@@ -203,7 +213,18 @@ python tools/convert_datasets/synthia.py $data_path/synthia/ --nproc 8
 </details>
 
 
-# DAFormer and MIC: Val Set Evaluation
+
+# 🎯 DAFormer for Semantic Segmentation
+
+See [DAFormer/README.md](https://github.com/ShenZheng2000/DAFormer/blob/master/README.md)
+
+# 🎯 MIC for Semantic Segmentation
+
+See [MIC/seg/README.md](https://github.com/ShenZheng2000/MIC/blob/master/seg/README.md)
+
+
+
+# 🏆 DAFormer and MIC: Val Set Evaluation
 
 Models can be tested after the training has finished:
 
@@ -212,7 +233,7 @@ sh test.sh path/to/checkpoint_directory
 ```
 
 
-# DAFormer and MIC: Test Set Evaluation
+# 🏆 DAFormer and MIC: Test Set Evaluation
 
 The results for Cityscapes→ACDC and Cityscapes→DarkZurich are reported on
 the test split of the target dataset. To generate the predictions for the test
@@ -227,6 +248,11 @@ bash test_test.sh path/to/checkpoint_directory
 2. Submit to [ACDC](https://acdc.vision.ee.ethz.ch/submit) or [DarkZurich](https://codalab.lisn.upsaclay.fr/competitions/3783#participate-submit_results) public evaluation server to obtain the scores. 
 
 
-# Utility Scripts
+# ❓ FAQ
 
-See utility scripts in [[here](https://github.com/ShenZheng2000/Instance-Warp-Scripts)]
+Please see [FAQ.md](FAQ.md) for common questions and answers about model design.
+
+
+# 🛠️ Utility Scripts
+
+See utility scripts in [here](https://github.com/ShenZheng2000/Instance-Warp-Scripts)
